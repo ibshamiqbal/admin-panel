@@ -28,6 +28,17 @@
   color: #61dafb;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.stream-main {
+  flex: 1; /* Allow the main content to take remaining space */
+  padding: 20px; /* Add padding for spacing */
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

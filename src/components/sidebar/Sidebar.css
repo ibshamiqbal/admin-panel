@@ -1,0 +1,156 @@
+#sidebar {
+    background: #020509;
+    grid-area: sidebar;
+    overflow-y: auto;
+    padding: 20px;
+    transition: all 0.5s;  
+    flex: 0 0 250px;   
+    grid-column: 1;     
+}
+.container {
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Sidebar and main content */
+    height: 100vh; /* Full viewport height */
+}
+
+.stream-main {
+    grid-column: 2;
+    flex: 1; /* Allow main content to take up remaining space */
+    padding: 20px;
+}
+
+
+
+.side__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f3f4f6;
+    margin-bottom: 30px;
+    width: 200px; /* fixed width */
+    background-color: #1a1a1a;
+    
+}
+.side__img {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebar__title > div > img {
+    width: 75px;
+    object-fit: contain;
+}
+
+.sidebar__title > div > h1 {
+    font-size : 18px;
+    display: inline;
+}
+
+.sidebar__title > i {
+    font-size: 18px;
+    display: none;
+}
+
+.sidebar__menu > h2 {
+    color: #3ea175;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 0 10px;
+    font-weight: 700;
+}
+
+.sidebar__link{
+    color: #f3f4f6;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+/* .active_menu_link{
+    background: rgba(62,161,117,0.3);
+    color:#3ea175;
+} */
+
+/* .active_menu_link a{
+    color: #3ea175 !important;
+} */
+
+.sidebar__link > a{
+    text-decoration: none;
+    color: #a5aaad;
+    font-weight: 700;
+}
+
+.sidebar__link > i{
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar__logout {
+    margin-top: 20px;
+    padding: 10px;
+    color: #e65061;
+}
+
+.sidebar__logout > a{
+    text-decoration: none;
+    color: #a5aaad;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sidebar__logout > i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar_responsive {
+    display: inline !important;
+    z-index: 9999 !important;
+    left: 0 !important;
+    position: absolute;
+
+}
+
+@media only screen and ( max-width:987px ) {
+    
+    .sidebar__title > i {
+        display: inline;
+    }
+    
+}
+
+.circle-image {
+    width: 120px; /* Set the desired width */
+    height: 120px; /* Set the desired height */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    border: 2px solid #ccc;
+    margin-right: 20px; /* Optional: Add a border around the image */
+}
+
+h1 {
+    font-size: 20px;
+    color: white;
+    margin-top: 10px;
+}
+@media (max-width: 768px) {
+    #sidebar {
+        width: 200px; /* Adjust sidebar width for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #sidebar {
+        position: absolute; /* Hide sidebar behind a toggle button */
+        left: -250px; /* Hide sidebar initially */
+        transition: left 0.3s ease; /* Smooth slide effect */
+    }
+
+    #sidebar.open {
+        left: 0; /* Show sidebar when open */
+    }
+}
